@@ -1,5 +1,5 @@
 import math
-from fractions import Fraction
+from fractions import Fraction #fractions library used for better accuracy
 #Greedy algorithm for finding Egyptian fractions
 def egyptian(f):
     result = []  
@@ -51,4 +51,5 @@ def continued_rat(frac):
         q = num // den
         ans.append(q)
         num, den = den, num - q * den
+
     return ans
