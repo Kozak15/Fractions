@@ -13,7 +13,19 @@ def egyptian(f):
         numerator = numerator * unit_fraction - denominator
         denominator = denominator * unit_fraction
     return result
-
+    
+def egyptian_no_library(f): #Doesn't use fractions library
+    result = []  
+    numerator = f[0]
+    denominator = f[1]
+    
+    while numerator > 0:  
+        unit_fraction = math.ceil(denominator / numerator)
+        result.append(unit_fraction)  
+        
+        numerator = numerator * unit_fraction - denominator
+        denominator = denominator * unit_fraction
+    return result
 #Improved version of the egyptian function, that tries to find a better representation
 def improved_egyptian(f):
     original = egyptian(f)
@@ -53,3 +65,4 @@ def continued_rat(frac):
         num, den = den, num - q * den
 
     return ans
+
