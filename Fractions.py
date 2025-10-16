@@ -45,6 +45,13 @@ def improved_egyptian(f):
             best_length = len(combined)
     return best   
 
+#Sylvester's sequence
+def s(n):
+    if n == 0:
+        return 2
+    else:
+        return s(n-1) * (s(n-1) - 1) + 1
+
 #Function to express a list of integers as a fraction
 def uncontinue(L):
     if not L:
@@ -65,4 +72,5 @@ def continued_rat(frac):
         num, den = den, num - q * den
 
     return ans
+
 
